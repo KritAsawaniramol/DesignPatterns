@@ -1,10 +1,16 @@
+import animals.Quackable;
+import animals.composites.LeaderFlock;
+import animals.decorated.QuackCounter;
+import adapters.AbstractDuckFactory;
+import factories.CountingAndEchoDuckFactory;
+
 public class DuckSimulator {
     public static void main (String[] args) {
         DuckSimulator simulator = new DuckSimulator();
-        //AbstractDuckFactory duckFactory = new CountingAndEchoDuckFactory();
-        //AbstractDuckFactory duckFactory = new DuckFactory();
+        //adapters.AbstractDuckFactory duckFactory = new factories.CountingAndEchoDuckFactory();
+        //adapters.AbstractDuckFactory duckFactory = new factories.DuckFactory();
 
-        AbstractDuckFactory duckFactory = new CountingDuckFactory();
+        AbstractDuckFactory duckFactory = new CountingAndEchoDuckFactory.CountingDuckFactory();
 
         simulator.simulate(duckFactory);
     }
@@ -17,19 +23,19 @@ public class DuckSimulator {
         Quackable rubberDuck = duckFactory.createRubberDuck();
         System.out.println("\nDuck Simulator: With Composite - Flocks");
 
-        //Quackable mallardDuck = new QuackEcho(new QuackCounter(new MallardDuck()));
-        //Quackable redheadDuck = new QuackEcho(new QuackCounter(new RedheadDuck()));
-        //Quackable duckCall = new QuackEcho(new QuackCounter(new DuckCall()));
-        //Quackable rubberDuck = new QuackEcho(new QuackCounter(new RubberDuck()));
-        //Quackable gooseDuck = new GooseAdapter((new Goose()));
-        //Quackable pigeon = new PigeonAdapter(new Pigeon());
+        //animals.Quackable mallardDuck = new animals.decorated.QuackEcho(new animals.decorated.QuackCounter(new animals.MallardDuck()));
+        //animals.Quackable redheadDuck = new animals.decorated.QuackEcho(new animals.decorated.QuackCounter(new animals.RedheadDuck()));
+        //animals.Quackable duckCall = new animals.decorated.QuackEcho(new animals.decorated.QuackCounter(new animals.DuckCall()));
+        //animals.Quackable rubberDuck = new animals.decorated.QuackEcho(new animals.decorated.QuackCounter(new animals.RubberDuck()));
+        //animals.Quackable gooseDuck = new adapters.GooseAdapter((new animals.Goose()));
+        //animals.Quackable pigeon = new adapter.PigeonAdapter(new animals.Pigeon());
 
-        //Quackable mallardDuck = new QuackCounter(new QuackEcho(new MallardDuck()));
-        //Quackable redheadDuck = new QuackCounter(new QuackEcho(new RedheadDuck()));
-        //Quackable duckCall = new QuackCounter(new QuackEcho(new DuckCall()));
-        //Quackable rubberDuck = new QuackCounter(new QuackEcho(new RubberDuck()));
-        //Quackable gooseDuck = new GooseAdapter((new Goose()));
-        //Quackable pigeon = new PigeonAdapter(new Pigeon());
+        //animals.Quackable mallardDuck = new animals.decorated.QuackCounter(new animals.decorated.QuackEcho(new animals.MallardDuck()));
+        //animals.Quackable redheadDuck = new animals.decorated.QuackCounter(new animals.decorated.QuackEcho(new animals.RedheadDuck()));
+        //animals.Quackable duckCall = new animals.decorated.QuackCounter(new animals.decorated.QuackEcho(new animals.DuckCall()));
+        //animals.Quackable rubberDuck = new animals.decorated.QuackCounter(new animals.decorated.QuackEcho(new animals.RubberDuck()));
+        //animals.Quackable gooseDuck = new adapters.GooseAdapter((new animals.Goose()));
+        //animals.Quackable pigeon = new adapter.PigeonAdapter(new animals.Pigeon());
 
         LeaderFlock flockOfDucks = new LeaderFlock();
         flockOfDucks.add(mallardDuck);
@@ -40,7 +46,7 @@ public class DuckSimulator {
 
 
 
-        System.out.println("\nDuck Simulator: Whole Flock Simulation");
+        System.out.println("\nDuck Simulator: Whole animals.composites.Flock Simulation");
         simulate(flockOfDucks);
 
         //simulate(mallardDuck);

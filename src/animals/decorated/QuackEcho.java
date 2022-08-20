@@ -1,0 +1,17 @@
+package animals.decorated;
+
+import animals.Quackable;
+
+public class QuackEcho implements Quackable {
+    Quackable duck;
+
+    public QuackEcho (Quackable duck){
+        this.duck = duck;
+    }
+
+    public void quack() {
+        duck.quack();
+        duck.quack();
+    }
+
+}
