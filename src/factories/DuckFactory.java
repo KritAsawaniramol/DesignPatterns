@@ -4,7 +4,6 @@ import animals.DuckCall;
 import animals.MallardDuck;
 import animals.RedheadDuck;
 import animals.RubberDuck;
-import adapters.AbstractDuckFactory;
 
 public class DuckFactory extends AbstractDuckFactory {
 

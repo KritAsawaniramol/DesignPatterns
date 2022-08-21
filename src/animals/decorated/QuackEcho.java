@@ -11,6 +11,7 @@ public class QuackEcho implements Quackable {
 
     public void quack() {
         duck.quack();
+        System.out.println("Echo:");
         duck.quack();
     }
 

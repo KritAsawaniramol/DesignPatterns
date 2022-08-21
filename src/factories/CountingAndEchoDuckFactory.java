@@ -1,7 +1,6 @@
 package factories;
 
 import animals.*;
-import adapters.AbstractDuckFactory;
 import animals.decorated.QuackCounter;
 import animals.decorated.QuackEcho;
 

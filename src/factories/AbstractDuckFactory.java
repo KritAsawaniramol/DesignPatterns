@@ -1,4 +1,4 @@
-package adapters;
+package factories;
 
 import animals.Quackable;
 
